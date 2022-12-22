@@ -33,8 +33,11 @@ const funcao1 = () => {
     paragraphContador.innerText = arrayDePalavras.length;
     for (let index = 0; index < arrayDePalavras.length; index += 1) {
       const createdSpan = document.createElement('span');
-      createdSpan.className = `${arrayEstilo[Math.floor(Math.random() * 3)]} ${arrayTamanho[Math.floor(Math.random() * 3)]} ${arrayRotacao[Math.floor(Math.random() * 2)]} ${arrayInclinacao[Math.floor(Math.random() * 2)]}`;
-      console.log(createdSpan);
+      const estilo = arrayEstilo[Math.floor(Math.random() * 3)];
+      const tamanho = arrayTamanho[Math.floor(Math.random() * 3)];
+      const rotacao = arrayRotacao[Math.floor(Math.random() * 2)];
+      const inclinacao = arrayInclinacao[Math.floor(Math.random() * 2)];
+      createdSpan.className = `${estilo} ${tamanho} ${rotacao} ${inclinacao}`;
       createdSpan.innerText = arrayDePalavras[index];
       paragraph.appendChild(createdSpan);
     }
@@ -45,7 +48,11 @@ button.addEventListener('click', funcao1);
 
 const funcao3 = (event) => {
   const alvo = event.target;
-  alvo.className = `${arrayEstilo[Math.floor(Math.random() * 3)]} ${arrayTamanho[Math.floor(Math.random() * 3)]} ${arrayRotacao[Math.floor(Math.random() * 2)]} ${arrayInclinacao[Math.floor(Math.random() * 2)]}`;
+  const estilo = arrayEstilo[Math.floor(Math.random() * 3)];
+  const tamanho = arrayTamanho[Math.floor(Math.random() * 3)];
+  const rotacao = arrayRotacao[Math.floor(Math.random() * 2)];
+  const inclinacao = arrayInclinacao[Math.floor(Math.random() * 2)];
+  alvo.className = `${estilo} ${tamanho} ${rotacao} ${inclinacao}`;
 };
 
 paragraph.addEventListener('click', funcao3);
