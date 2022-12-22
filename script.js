@@ -43,3 +43,10 @@ const funcao1 = () => {
 };
 
 button.addEventListener('click', funcao1);
+
+const funcao3 = (event) => {
+  const alvo = event.target;
+  alvo.className = `${arrayEstilo[Math.floor(Math.random() * 3)]} ${arrayTamanho[Math.floor(Math.random() * 3)]} ${arrayRotacao[Math.floor(Math.random() * 2)]} ${arrayInclinacao[Math.floor(Math.random() * 2)]}`;
+};
+
+paragraph.addEventListener('click', funcao3);
