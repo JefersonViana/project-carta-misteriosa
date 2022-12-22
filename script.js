@@ -50,3 +50,4 @@ const funcao3 = (event) => {
 };
 
 paragraph.addEventListener('click', funcao3);
+
