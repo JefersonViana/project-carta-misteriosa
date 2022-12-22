@@ -11,6 +11,15 @@ body.appendChild(input);
 body.appendChild(button);
 body.appendChild(paragraph);
 
+const arrayEstilo = ['newspaper', 'magazine1', 'magazine2'];
+const arrayTamanho = ['medium', 'big', 'reallybig'];
+const arrayRotacao = ['rotateleft', 'rotateright'];
+const arrayInclinacao = ['skewleft', 'skewright'];
+console.log(arrayEstilo[Math.floor(Math.random() * 3)]);
+console.log(arrayTamanho[Math.floor(Math.random() * 3)]);
+console.log(arrayRotacao[Math.floor(Math.random() * 2)]);
+console.log(arrayInclinacao[Math.floor(Math.random() * 2)]);
+
 const funcao2 = () => {
   paragraph.innerText = 'Por favor, digite o conteúdo da carta.';
 };
@@ -25,6 +34,8 @@ const funcao1 = () => {
     paragraph.innerHTML = '';
     for (let index = 0; index < arrayDePalavras.length; index += 1) {
       const createdSpan = document.createElement('span');
+      createdSpan.className = `${arrayEstilo[Math.floor(Math.random() * 3)]} ${arrayTamanho[Math.floor(Math.random() * 3)]} ${arrayRotacao[Math.floor(Math.random() * 2)]} ${arrayInclinacao[Math.floor(Math.random() * 2)]}`;
+      console.log(createdSpan);
       createdSpan.innerText = arrayDePalavras[index];
       paragraph.appendChild(createdSpan);
     }
