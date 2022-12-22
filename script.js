@@ -7,14 +7,13 @@ const button = document.createElement('button');
 button.id = 'criar-carta';
 button.innerText = 'Sou o botão!';
 paragraph.id = 'carta-gerada';
-// paragraph.innerText = 'Estou aqui!'
 body.appendChild(input);
 body.appendChild(button);
 body.appendChild(paragraph);
 
 const funcao2 = () => {
   paragraph.innerText = 'Por favor, digite o conteúdo da carta.';
-}
+};
 
 const funcao1 = () => {
   const texto = input.value;
@@ -22,7 +21,7 @@ const funcao1 = () => {
   if (texto.length === 0 || texto[0] === ' ') {
     funcao2();
   } else {
-    let arrayDePalavras = texto.split(' ');
+    const arrayDePalavras = texto.split(' ');
     paragraph.innerHTML = '';
     for (let index = 0; index < arrayDePalavras.length; index += 1) {
       const createdSpan = document.createElement('span');
@@ -32,4 +31,4 @@ const funcao1 = () => {
   }
 };
 
-button.addEventListener('click', funcao1)
+button.addEventListener('click', funcao1);
