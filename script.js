@@ -12,15 +12,23 @@ body.appendChild(input);
 body.appendChild(button);
 body.appendChild(paragraph);
 
+const funcao2 = () => {
+  paragraph.innerText = 'Por favor, digite o conteúdo da carta.';
+}
+
 const funcao1 = () => {
   const texto = input.value;
-  let arrayDePalavras = texto.split(' ');
-  console.log(arrayDePalavras);
-  paragraph.innerHTML = '';
-  for (let index = 0; index < arrayDePalavras.length; index += 1) {
-    const createdSpan = document.createElement('span');
-    createdSpan.innerText = arrayDePalavras[index];
-    paragraph.appendChild(createdSpan);
+  console.log(texto.length);
+  if (texto.length === 0 || texto[0] === ' ') {
+    funcao2();
+  } else {
+    let arrayDePalavras = texto.split(' ');
+    paragraph.innerHTML = '';
+    for (let index = 0; index < arrayDePalavras.length; index += 1) {
+      const createdSpan = document.createElement('span');
+      createdSpan.innerText = arrayDePalavras[index];
+      paragraph.appendChild(createdSpan);
+    }
   }
 };
 
